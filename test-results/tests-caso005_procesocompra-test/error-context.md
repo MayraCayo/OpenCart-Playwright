@@ -1,0 +1,222 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - link "$ Currency " [ref=e10] [cursor=pointer]:
+            - /url: "#"
+            - strong [ref=e11] [cursor=pointer]: $
+            - generic [ref=e12] [cursor=pointer]: Currency
+            - generic [ref=e13] [cursor=pointer]: 
+        - listitem
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - link " 123456789" [ref=e17] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=information/contact&language=en-gb
+            - generic [ref=e18] [cursor=pointer]: 
+            - generic [ref=e19] [cursor=pointer]: "123456789"
+        - listitem [ref=e20]:
+          - link " My Account " [ref=e22] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e23] [cursor=pointer]: 
+            - generic [ref=e24] [cursor=pointer]: My Account
+            - generic [ref=e25] [cursor=pointer]: 
+        - listitem [ref=e26]:
+          - link " Wish List (0)" [ref=e27] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=account/wishlist&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+            - generic [ref=e28] [cursor=pointer]: 
+            - generic [ref=e29] [cursor=pointer]: Wish List (0)
+        - listitem [ref=e30]:
+          - link " Shopping Cart" [ref=e31] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=checkout/cart&language=en-gb
+            - generic [ref=e32] [cursor=pointer]: 
+            - generic [ref=e33] [cursor=pointer]: Shopping Cart
+        - listitem [ref=e34]:
+          - link " Checkout" [ref=e35] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=checkout/checkout&language=en-gb
+            - generic [ref=e36] [cursor=pointer]: 
+            - generic [ref=e37] [cursor=pointer]: Checkout
+  - banner [ref=e38]:
+    - generic [ref=e40]:
+      - link "Your Store" [ref=e43] [cursor=pointer]:
+        - /url: http://localhost/opencart/upload/index.php?route=common/home&language=en-gb
+        - img "Your Store" [ref=e44] [cursor=pointer]
+      - generic [ref=e46]:
+        - textbox "Search" [ref=e47]
+        - button "" [ref=e48] [cursor=pointer]:
+          - generic [ref=e49] [cursor=pointer]: 
+      - generic [ref=e51]:
+        - button " 8 item(s) - $976.00" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53] [cursor=pointer]: 
+          - text: 8 item(s) - $976.00
+        - text:   
+  - main [ref=e54]:
+    - navigation [ref=e56]:
+      - text: 
+      - list [ref=e58]:
+        - listitem [ref=e59]:
+          - link "Desktops" [ref=e60] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=20
+        - listitem [ref=e61]:
+          - link "Laptops & Notebooks" [ref=e62] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=18
+        - listitem [ref=e63]:
+          - link "Components" [ref=e64] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=25
+        - listitem [ref=e65]:
+          - link "Tablets" [ref=e66] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=57
+        - listitem [ref=e67]:
+          - link "Software" [ref=e68] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=17
+        - listitem [ref=e69]:
+          - link "Phones & PDAs" [ref=e70] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=24
+        - listitem [ref=e71]:
+          - link "Cameras" [ref=e72] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=33
+        - listitem [ref=e73]:
+          - link "MP3 Players" [ref=e74] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=34
+    - generic [ref=e75]:
+      - list [ref=e76]:
+        - listitem [ref=e77]:
+          - link "" [ref=e78] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=common/home&language=en-gb
+            - generic [ref=e79] [cursor=pointer]: 
+        - listitem [ref=e80]:
+          - link "Laptops & Notebooks" [ref=e81] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/category&language=en-gb&path=18
+        - listitem [ref=e82]:
+          - link "HP LP3065" [ref=e83] [cursor=pointer]:
+            - /url: http://localhost/opencart/upload/index.php?route=product/product&language=en-gb&path=18&product_id=47
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e88]:
+            - link "HP LP3065" [ref=e89] [cursor=pointer]:
+              - /url: http://localhost/opencart/upload/image/cache/catalog/demo/hp_1-800x800.jpg
+              - img "HP LP3065" [ref=e90] [cursor=pointer]
+            - generic [ref=e91]:
+              - link "HP LP3065" [ref=e92] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/image/cache/catalog/demo/hp_2-800x800.jpg
+                - img "HP LP3065" [ref=e93] [cursor=pointer]
+              - link "HP LP3065" [ref=e94] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/image/cache/catalog/demo/hp_3-800x800.jpg
+                - img "HP LP3065" [ref=e95] [cursor=pointer]
+          - generic [ref=e96]:
+            - heading "HP LP3065" [level=1] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - text: "Brand:"
+                - link "Hewlett-Packard" [ref=e100] [cursor=pointer]:
+                  - /url: http://localhost/opencart/upload/index.php?route=product/manufacturer.info&language=en-gb&manufacturer_id=7
+              - listitem [ref=e101]: "Product Code: Product 21"
+              - listitem [ref=e102]: "Reward Points: 300"
+              - listitem [ref=e103]: "Availability: In Stock"
+            - paragraph [ref=e105]:
+              - generic [ref=e107]: 
+              - generic [ref=e109]: 
+              - generic [ref=e111]: 
+              - generic [ref=e113]: 
+              - generic [ref=e115]: 
+              - link "0 reviews" [ref=e116] [cursor=pointer]:
+                - /url: "#"
+              - text: /
+              - link "Write a review" [ref=e117] [cursor=pointer]:
+                - /url: "#"
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - heading "$122.00" [level=2] [ref=e120]:
+                  - generic [ref=e121]: $122.00
+              - listitem [ref=e122]: "Ex Tax: $100.00"
+              - listitem [ref=e123]: "Price in reward points: 400"
+            - generic [ref=e125]:
+              - button "" [ref=e126] [cursor=pointer]:
+                - generic [ref=e127] [cursor=pointer]: 
+              - button "" [ref=e128] [cursor=pointer]:
+                - generic [ref=e129] [cursor=pointer]: 
+            - generic [ref=e131]:
+              - separator [ref=e132]
+              - heading "Available Options" [level=3] [ref=e133]
+              - generic [ref=e135]:
+                - generic [ref=e136]: "* Delivery Date"
+                - textbox "* Delivery Date" [ref=e137]: 2011-04-22
+              - generic [ref=e139]:
+                - generic [ref=e140]: Qty
+                - textbox [ref=e141]: "1"
+                - button "Add to Cart" [ref=e142] [cursor=pointer]
+        - tablist [ref=e143]:
+          - tab "Description" [selected] [ref=e144] [cursor=pointer]
+          - tab "Specification" [ref=e145] [cursor=pointer]
+          - tab "Reviews (0)" [ref=e146] [cursor=pointer]
+        - generic [ref=e147]:
+          - tabpanel [ref=e148]:
+            - paragraph [ref=e149]: Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you're at the office
+          - text: "* * *"
+  - contentinfo [ref=e150]:
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - heading "Information" [level=5] [ref=e154]
+          - list [ref=e155]:
+            - listitem [ref=e156]:
+              - link "Terms & Conditions" [ref=e157] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=information/information&language=en-gb&information_id=2
+            - listitem [ref=e158]:
+              - link "Delivery Information" [ref=e159] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=information/information&language=en-gb&information_id=4
+            - listitem [ref=e160]:
+              - link "About Us" [ref=e161] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=information/information&language=en-gb&information_id=1
+            - listitem [ref=e162]:
+              - link "Privacy Policy" [ref=e163] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=information/information&language=en-gb&information_id=3
+        - generic [ref=e164]:
+          - heading "Customer Service" [level=5] [ref=e165]
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - link "Contact Us" [ref=e168] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=information/contact&language=en-gb
+            - listitem [ref=e169]:
+              - link "Returns" [ref=e170] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=account/returns.add&language=en-gb
+            - listitem [ref=e171]:
+              - link "Site Map" [ref=e172] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=information/sitemap&language=en-gb
+        - generic [ref=e173]:
+          - heading "Extras" [level=5] [ref=e174]
+          - list [ref=e175]:
+            - listitem [ref=e176]:
+              - link "Brands" [ref=e177] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=product/manufacturer&language=en-gb
+            - listitem [ref=e178]:
+              - link "Affiliate" [ref=e179] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=account/affiliate&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+            - listitem [ref=e180]:
+              - link "Specials" [ref=e181] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=product/special&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+        - generic [ref=e182]:
+          - heading "My Account" [level=5] [ref=e183]
+          - list [ref=e184]:
+            - listitem [ref=e185]:
+              - link "My Account" [ref=e186] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=account/account&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+            - listitem [ref=e187]:
+              - link "Order History" [ref=e188] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=account/order&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+            - listitem [ref=e189]:
+              - link "Wish List" [ref=e190] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=account/wishlist&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+            - listitem [ref=e191]:
+              - link "Newsletter" [ref=e192] [cursor=pointer]:
+                - /url: http://localhost/opencart/upload/index.php?route=account/newsletter&language=en-gb&customer_token=01d39f7911c85ed34e36948db4
+      - separator [ref=e193]
+      - paragraph [ref=e194]:
+        - text: Powered By
+        - link "OpenCart" [ref=e195] [cursor=pointer]:
+          - /url: https://www.opencart.com
+        - text: Your Store © 2025
+```
