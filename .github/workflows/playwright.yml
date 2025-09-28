@@ -21,18 +21,16 @@ jobs:
           --health-retries 3
 
       opencart:
-        image: opencart/opencart:latest
+        image: webkul/opencart:latest
         env:
-          OPENCART_HOST: localhost
-          OPENCART_DATABASE_HOST: mysql
-          OPENCART_DATABASE_PORT_NUMBER: 3306
-          OPENCART_DATABASE_USER: root
-          OPENCART_DATABASE_PASSWORD: ""
-          OPENCART_DATABASE_NAME: opencart
+          MYSQL_HOST: mysql
+          MYSQL_DATABASE: opencart
+          MYSQL_USER: root
+          MYSQL_PASSWORD: ""
         ports:
-          - 80:8080
+          - 80:80
         options: >-
-          --health-cmd "curl -f http://localhost:8080/ || exit 1"
+          --health-cmd "curl -f http://localhost/ || exit 1"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
