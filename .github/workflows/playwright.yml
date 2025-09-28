@@ -21,7 +21,7 @@ jobs:
           --health-retries 3
 
       opencart:
-        image: bitnami/opencart:latest
+        image: opencart/opencart:latest
         env:
           OPENCART_HOST: localhost
           OPENCART_DATABASE_HOST: mysql
