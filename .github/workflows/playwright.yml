@@ -30,7 +30,7 @@ jobs:
           OPENCART_DATABASE_PASSWORD: ""
           OPENCART_DATABASE_NAME: opencart
         ports:
-          - 8080:8080
+          - 80:8080
         options: >-
           --health-cmd "curl -f http://localhost:8080/ || exit 1"
           --health-interval 10s
@@ -38,16 +38,11 @@ jobs:
           --health-retries 5
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm ci
 
       - name: Run Playwright tests
         run: npx playwright test
-        env:
-          BASE_URL: http://localhost:8080
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-results
-          path: playwright-report/
