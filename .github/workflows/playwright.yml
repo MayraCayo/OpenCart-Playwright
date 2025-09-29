@@ -22,7 +22,7 @@ jobs:
           --health-retries 10
 
       opencart:
-        image: webkul/opencart:3.0.3.7
+        image: opencart/opencart:3.0.3.7
         env:
           MYSQL_HOST: mysql
           MYSQL_DATABASE: opencart
