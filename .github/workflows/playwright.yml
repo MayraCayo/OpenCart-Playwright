@@ -1,63 +1,60 @@
 name: Playwright Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     services:
       mysql:
         image: mysql:5.7
+        ports:
+          - 3306:3306
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: opencart
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306:3306
         options: >-
-          --health-cmd "mysqladmin ping --silent"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 10
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
       opencart:
-        image: opencart/opencart:3.0.3.7
-        env:
-          MYSQL_HOST: mysql
-          MYSQL_DATABASE: opencart
-          MYSQL_USER: root
-          MYSQL_PASSWORD: root
+        image: webkul/opencart:3.0.3.6
         ports:
           - 8080:80
         options: >-
-          --health-cmd "curl -f http://localhost:8080 || exit 1"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 10
+          --health-cmd="curl --fail http://localhost:80 || exit 1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Wait for MySQL
         run: |
-          for i in {1..30}; do
-            mysqladmin ping -h mysql -uroot -proot && break
-            echo "Waiting for MySQL..."
-            sleep 5
+          echo "Waiting for MySQL..."
+          until mysqladmin ping -h 127.0.0.1 --silent; do
+            sleep 2
           done
 
-      - name: Wait for OpenCart
-        run: |
-          for i in {1..30}; do
-            curl -f http://localhost:8080 && break
-            echo "Waiting for OpenCart..."
-            sleep 5
-          done
+      - name: Install dependencies
+        run: npm install
 
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          DATABASE_HOST: 127.0.0.1
+          DATABASE_PORT: 3306
+          DATABASE_NAME: opencart
