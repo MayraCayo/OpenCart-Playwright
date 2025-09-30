@@ -9,44 +9,43 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    services:
-      # Levanta el contenedor de MySQL y OpenCart
-      docker:
-        image: docker:20.10.24
-        options: --privileged
 
     steps:
+      # 1️⃣ Clonar el repositorio
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker Compose
-        uses: docker/setup-docker@v3
-
+      # 2️⃣ Levantar servicios con Docker Compose
       - name: Start OpenCart services
         run: docker-compose up -d
 
+      # 3️⃣ Esperar a que OpenCart esté listo
       - name: Wait for OpenCart to be ready
-        run: |
-          echo "Esperando 30s para que OpenCart cargue..."
-          sleep 30
+        run: sleep 30
 
+      # 4️⃣ Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
+      # 5️⃣ Instalar dependencias del proyecto
       - name: Install dependencies
         run: npm install
 
+      # 6️⃣ Dar permisos al binario de Playwright
       - name: Fix Playwright permissions
         run: chmod +x ./node_modules/.bin/playwright
 
+      # 7️⃣ Instalar navegadores de Playwright
       - name: Install Playwright Browsers
         run: npm run playwright:install
 
+      # 8️⃣ Ejecutar los tests
       - name: Run Playwright Tests
         run: npm run test:e2e
 
+      # 9️⃣ Subir resultados como artifact
       - name: Upload Playwright Test Results
         uses: actions/upload-artifact@v4
         if: always()
@@ -54,5 +53,6 @@ jobs:
           name: playwright-results
           path: playwright-report/
 
+      # 🔟 Apagar contenedores después de los tests
       - name: Stop Docker containers
         run: docker-compose down
