@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Tests with OpenCart Docker
 
 on:
   push:
@@ -7,11 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
-  run-playwright-tests:
+  e2e-tests:
     runs-on: ubuntu-latest
+    services:
+      # Levanta el contenedor de MySQL y OpenCart
+      docker:
+        image: docker:20.10.24
+        options: --privileged
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set up Docker Compose
+        uses: docker/setup-docker@v3
+
+      - name: Start OpenCart services
+        run: docker-compose up -d
+
+      - name: Wait for OpenCart to be ready
+        run: |
+          echo "Esperando 30s para que OpenCart cargue..."
+          sleep 30
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -21,12 +38,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 🔧 Dar permisos al binario de Playwright
       - name: Fix Playwright permissions
         run: chmod +x ./node_modules/.bin/playwright
-
-      - name: Check Playwright Version
-        run: npm run playwright:version
 
       - name: Install Playwright Browsers
         run: npm run playwright:install
@@ -40,3 +53,6 @@ jobs:
         with:
           name: playwright-results
           path: playwright-report/
+
+      - name: Stop Docker containers
+        run: docker-compose down
