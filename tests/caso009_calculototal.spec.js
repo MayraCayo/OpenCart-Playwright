@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('http://localhost/opencart/upload/');
+  await page.goto('http://localhost:8080/');
   await page.getByRole('link', { name: 'Components', exact: true }).click();
   await page.getByRole('link', { name: 'Monitors (2)' }).click();
   await page.getByRole('link', { name: 'Samsung SyncMaster 941BW' }).first().click();
