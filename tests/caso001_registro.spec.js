@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://demo.opencart.com/');
+  await page.goto('http://localhost/opencart/upload/');
   await page.getByRole('link', { name: ' My Account ' }).click();
   await page.getByRole('link', { name: 'Register' }).click();
   await page.getByRole('heading', { name: 'Register Account' }).click();
