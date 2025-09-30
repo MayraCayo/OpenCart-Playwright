@@ -21,17 +21,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 🔎 Verificamos que Playwright está instalado
-      - name: Verify Playwright install
-        run: npx playwright --version
+      # 👇 Verificar que Playwright está instalado
+      - name: Check Playwright Version
+        run: npm run playwright:version
 
-      # 🚀 Instalamos navegadores
+      # 👇 Instalar navegadores de Playwright
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npm run playwright:install
 
+      # 👇 Ejecutar los tests
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=list
+        run: npm run test:e2e
 
+      # 👇 Subir reporte como artefacto
       - name: Upload Playwright Test Results
         if: always()
         uses: actions/upload-artifact@v4
