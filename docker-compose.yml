@@ -1,3 +1,4 @@
+version: "3"
 
 services:
   db:
@@ -12,10 +13,10 @@ services:
       - "3306:3306"
 
   opencart:
-    image: bitnami/opencart:latest
+    image: aamservices/opencart:latest
     restart: always
     ports:
-      - "8080:8080"
+      - "8080:80"
     depends_on:
       - db
     environment:
@@ -23,4 +24,3 @@ services:
       DB_USER: opencart
       DB_PASSWORD: opencart
       DB_NAME: opencart
-
