@@ -21,6 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 🔧 Dar permisos al binario de Playwright
+      - name: Fix Playwright permissions
+        run: chmod +x ./node_modules/.bin/playwright
+
       - name: Check Playwright Version
         run: npm run playwright:version
 
