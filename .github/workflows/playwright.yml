@@ -1,6 +1,5 @@
 name: Playwright Tests
 
-# Eventos que disparan el workflow
 on:
   push:
     branches: [ main ]
@@ -11,29 +10,24 @@ jobs:
   run-playwright-tests:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Clonar el repositorio
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Instalar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # 3️⃣ Instalar dependencias del proyecto
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Instalar navegadores de Playwright
+      # 👇 Este paso asegura que Playwright esté disponible
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      # 5️⃣ Ejecutar los tests de Playwright
       - name: Run Playwright Tests
         run: npx playwright test --reporter=list
 
-      # 6️⃣ Guardar los resultados como artefactos
       - name: Upload Playwright Test Results
         if: always()
         uses: actions/upload-artifact@v4
