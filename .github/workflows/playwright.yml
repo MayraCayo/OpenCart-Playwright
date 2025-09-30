@@ -21,7 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 👇 Este paso asegura que Playwright esté disponible
+      # 🔎 Verificamos que Playwright está instalado
+      - name: Verify Playwright install
+        run: npx playwright --version
+
+      # 🚀 Instalamos navegadores
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
