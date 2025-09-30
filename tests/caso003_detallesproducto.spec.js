@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('http://localhost/opencart/upload/');
+  await page.goto('http://localhost:8080/');
   await page.getByRole('link', { name: 'iPhone' }).first().click();
   await page.locator('#navbar-menu').getByRole('link', { name: 'Tablets' }).click();
   await page.getByText('Samsung Galaxy Tab 10.1', { exact: true }).click();
