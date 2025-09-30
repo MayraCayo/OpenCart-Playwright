@@ -3,8 +3,6 @@ import { test, expect } from '@playwright/test';
 test('test', async ({ page }) => {
   await page.goto('http://localhost:8080/');
   await page.getByRole('link', { name: ' My Account ' }).click();
-  await myAccount.waitFor({ state: 'visible', timeout: 60000 });
-  await myAccount.click();
   await page.getByRole('link', { name: 'Register' }).click();
   await page.getByRole('heading', { name: 'Register Account' }).click();
   await page.getByRole('textbox', { name: '* First Name' }).click();
