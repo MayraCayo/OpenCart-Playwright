@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: opencart
+      MYSQL_USER: opencart
+      MYSQL_PASSWORD: opencart
+    ports:
+      - "3306:3306"
+
+  opencart:
+    image: opencart/opencart:latest
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: opencart
+      DB_PASSWORD: opencart
+      DB_NAME: opencart
